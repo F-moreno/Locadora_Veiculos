@@ -6,6 +6,9 @@ class Veiculo:
         self.placa = placa
         self.locado = locado
 
+    def __str__(self):
+        return f"Modelo: {self.modelo} | Ano: {self.ano} | Situação: {'Alugado' if self.locado else 'Disponível'}"
+
     def alugar(self):
         try:
             if not self.locado:
@@ -56,7 +59,7 @@ class Portfolio:
             raise StopIteration  # sobe a excessão de parada.
 
     def __str__(self):
-        return "Objeto Portfolio"
+        return f"O portifólio contém {len(self.veiculos)} veículos"
 
 
 # # # teste
